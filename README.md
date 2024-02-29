@@ -5,3 +5,4 @@ The primary goal of this platform is to simplify and facilitate transactions bet
 Our target audience includes current students only. These students will be interested in purchasing textbooks, clothing and supplies. An e-commerce web app will make it easier for students to buy, sell, and find necessary items. Our target audience will be geographically limited to the UK.
 
 # edit to be deleted later
+# another to be removed
