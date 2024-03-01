@@ -15,11 +15,11 @@ export const Signup = () => {
 
   return (
     <>
-    <Container className="d-flex align-items-center" style={{minHeight: "100vh"}}>
+    <Container className="h-100 d-flex align-items-center justify-content-center" style={{minHeight: "100vh"}}>
       <div className="w-100" style={{maxWidth: "400px"}}>
     <Card>
       <Card.Body>
-        <h2 className="text-center mb-4">Campus<span style={{ color: 'red' }}>Price</span></h2>
+      <h2 className="text-center mb-4">Campus<span style={{ color: 'red' }}>Price</span></h2>    
         
         <Form>
           <Form.Group id="email">
