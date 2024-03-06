@@ -25,7 +25,7 @@ export const Login = () => {
             <Form.Label>Password</Form.Label>
             <Form.Control type="password" required/>
           </Form.Group>
-          <Button className="w-100" type="submit">Sign In</Button>
+          <Button className="w-100" type="submit" onClick={callPostData("test")}>Sign In</Button>
         </Form>
 
       </Card.Body>
@@ -39,3 +39,35 @@ export const Login = () => {
 }
 
 export default Login
+
+function callPostData(data){
+  console.log(data)
+  PostData('login',this.state).then((result) => {
+    let responseJson = result;
+    console.log("we are posting OK");
+    if(responseJson.userData){
+      console.log("we are RECIEVEING OK");
+      console.log(result);
+      sessionStorage.setItem('userData',JSON.stringify(responseJson));
+      this.setState({redirectToReferrer: true});
+    }
+    });
+  
+
+}
+export function PostData(type, userData) {
+  let BaseURL = '/login.php';
+  return new Promise((resolve, reject) =>{
+  fetch(BaseURL+type, {
+ method: 'POST',
+ body: JSON.stringify(userData)
+ })
+ .then((response) => response.json())
+ .then((res) => {
+  resolve(res);
+ })
+ .catch((error) => {
+  reject(error);
+ });
+ });
+ }
