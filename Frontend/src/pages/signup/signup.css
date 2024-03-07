@@ -33,8 +33,7 @@
     color: white;
   }
 
-
-  .logo-link {
+  a {
     text-decoration: none;
     color: black;
   }

@@ -1,21 +1,31 @@
 import React, { useState } from 'react';
 import { FaCaretDown } from 'react-icons/fa';
-import Dropdown from 'react-bootstrap/Dropdown';
 
 function Books() {
+ 
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleDropdown = () => {
+    setIsOpen(!isOpen);
+  };
 
   return (
-    <Dropdown>
-  <Dropdown.Toggle style={{ backgroundColor: 'teal', borderColor: 'Teal', color: 'black' }} id="dropdown-basic">
-    Books
-  </Dropdown.Toggle>
-
-  <Dropdown.Menu style={{ backgroundColor: 'Teal' }}>
-    <Dropdown.Item style={{ color: 'white' }} href="#/action-1">Physics</Dropdown.Item>
-    <Dropdown.Item style={{ color: 'white' }} href="#/action-2">Computer Science</Dropdown.Item>
-    <Dropdown.Item style={{ color: 'white' }} href="#/action-3">Fiction</Dropdown.Item>
-  </Dropdown.Menu>
-</Dropdown>
+    <div className="dropdown">
+      {/* Button to toggle the dropdown */}
+      <button className="dropdown-toggle" onClick={toggleDropdown}>
+      <a href="#">Books<FaCaretDown /></a>
+      </button>
+      {/* Dropdown menu */}
+      {isOpen && (
+        <div className="dropdown-menu">
+          <ul>
+            <li>Physics</li>
+            <li>Computer Science</li>
+            <li>English</li>
+          </ul>
+        </div>
+      )}
+    </div>
   );
 }
 

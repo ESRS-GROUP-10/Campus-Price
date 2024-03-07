@@ -1,28 +1,28 @@
 import React, { useState } from 'react';
 import { FaCaretDown } from 'react-icons/fa';
 
-function SportsLeisure() {
-
+function Food() {
+  // State to manage whether the dropdown is open or closed
   const [isOpen, setIsOpen] = useState(false);
 
-  // toggle dropdown
+  // Function to toggle the dropdown state
   const toggleDropdown = () => {
     setIsOpen(!isOpen);
   };
 
   return (
-    <div className="dropdown-box">
+    <div className="dropdown">
       {/* Button to toggle the dropdown */}
       <button className="dropdown-toggle" onClick={toggleDropdown}>
-      <a href="#">SportsLeisure<FaCaretDown /></a>
+      <a href="#">Food<FaCaretDown /></a>
       </button>
       {/* Dropdown menu */}
       {isOpen && (
         <div className="dropdown-menu">
           <ul>
-            <li>Equipment</li>
-            <li>Gym</li>
-            <li>Hobbies</li>
+            <li>Herbs & Spices</li>
+            <li>Canned Foods</li>
+            <li>Snacks</li>
           </ul>
         </div>
       )}
@@ -30,4 +30,4 @@ function SportsLeisure() {
   );
 }
 
-export default SportsLeisure;
+export default Food;

@@ -5,6 +5,8 @@ import { FaArrowRight } from 'react-icons/fa';
 export const Main = () => {
   return (
     <div>
+        
+        
         <div className='top-sellers'>
         <div className='top-seller-h2'><h2>Top Sellers</h2></div>
             <div className='top-sellers-items'>
