@@ -25,7 +25,7 @@ export const Login = () => {
             <Form.Label>Password</Form.Label>
             <Form.Control type="password" required/>
           </Form.Group>
-          <Button className="w-100" type="submit" onClick={PostData2("test")}>Sign In</Button>
+          <Button className="w-100" type="submit" onClick={getDeets()}>Sign In</Button>
         </Form>
 
       </Card.Body>
@@ -40,27 +40,24 @@ export const Login = () => {
 
 export default Login
 
-function callPostData(data){
-  console.log(data);
-  const postData6 = {
-    email: "Adminy", password: "pass"
-  }
-  
-  PostData('login',postData6).then((result) => {
-    console.log("we are posting OK");
-    let responseJson = result;
-    if(responseJson.userData){
-      console.log("we are RECIEVEING OK");
-      console.log(result);
-      sessionStorage.setItem('userData',JSON.stringify(responseJson));
-      this.setState({redirectToReferrer: true});
-    }
-    });
-  
+export function getDeets(){
+  const username = document.getElementById("username");
+  const inputValue = username.value;
+  console.log(inputValue);
 
+  const pword = document.getElementById("password");
+  const pwordVal = pword.value;
+  console.log(pwordVal);
+
+  const postData = {
+    username: inputValue, password: pwordVal
+  }
+  PostData2(postData);
 }
+
+//maybe JSON.PARSE(data) or JSON(data)
 export function PostData2(data){
-  return fetch('/backend/login.php', {
+  return fetch('../backend/login.php', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
@@ -93,23 +90,5 @@ export function PostData2(data){
       console.log(responseData.data);
     }
   });
-
-
-
 }
-export function PostData(userData) {
-  let BaseURL = '../backend/login.php';
-  return new Promise((resolve, reject) =>{
-  fetch(BaseURL, {
- method: 'POST',
- body: JSON.stringify(userData)
- })
- .then((response) => response.json())
- .then((res) => {
-  resolve(res);
- })
- .catch((error) => {
-  reject(error);
- });
- });
- }
+
