@@ -73,6 +73,7 @@ export function PostData2(data){
       throw new Error('Bad status code from server.');
     }
     else{
+      console.log(response);
       //ifresponce.json.contains("OK"){
         //redirect do whatever.....
       //}
