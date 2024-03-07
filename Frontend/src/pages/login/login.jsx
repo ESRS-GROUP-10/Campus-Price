@@ -25,7 +25,7 @@ export const Login = () => {
             <Form.Label>Password</Form.Label>
             <Form.Control type="password" required/>
           </Form.Group>
-          <Button className="w-100" type="submit" onClick={callPostData("test")}>Sign In</Button>
+          <Button className="w-100" type="submit" onClick={PostData2("test")}>Sign In</Button>
         </Form>
 
       </Card.Body>
@@ -65,7 +65,7 @@ export function PostData2(data){
     headers: {
       'Content-Type': 'application/json'
     },
-    body: JSON.stringify(subscription)
+    body: JSON.stringify(data)
   })
   .then(function(response) {
     if (!response.ok) {
