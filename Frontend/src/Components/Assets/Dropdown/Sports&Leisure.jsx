@@ -1,32 +1,20 @@
 import React, { useState } from 'react';
-import { FaCaretDown } from 'react-icons/fa';
+import Dropdown from 'react-bootstrap/Dropdown';
 
 function SportsLeisure() {
 
-  const [isOpen, setIsOpen] = useState(false);
-
-  // toggle dropdown
-  const toggleDropdown = () => {
-    setIsOpen(!isOpen);
-  };
-
   return (
-    <div className="dropdown-box">
-      {/* Button to toggle the dropdown */}
-      <button className="dropdown-toggle" onClick={toggleDropdown}>
-      <a href="#">SportsLeisure<FaCaretDown /></a>
-      </button>
-      {/* Dropdown menu */}
-      {isOpen && (
-        <div className="dropdown-menu">
-          <ul>
-            <li>Equipment</li>
-            <li>Gym</li>
-            <li>Hobbies</li>
-          </ul>
-        </div>
-      )}
-    </div>
+    <Dropdown>
+    <Dropdown.Toggle style={{ backgroundColor: 'teal', borderColor: 'Teal', color: 'black' }} id="dropdown-basic">
+      Sports & Leisure
+    </Dropdown.Toggle>
+  
+    <Dropdown.Menu style={{ backgroundColor: 'Teal' }}>
+      <Dropdown.Item style={{ color: 'white' }} href="#/action-1">Equipments</Dropdown.Item>
+      <Dropdown.Item style={{ color: 'white' }} href="#/action-2">Sports Wear</Dropdown.Item>
+      <Dropdown.Item style={{ color: 'white' }} href="#/action-3">Utilities</Dropdown.Item>
+    </Dropdown.Menu>
+  </Dropdown>
   );
 }
 

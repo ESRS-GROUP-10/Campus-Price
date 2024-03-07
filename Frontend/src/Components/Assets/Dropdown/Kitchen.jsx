@@ -1,32 +1,21 @@
 import React, { useState } from 'react';
-import { FaCaretDown } from 'react-icons/fa';
+import Dropdown from 'react-bootstrap/Dropdown';
 
 function Kitchen() {
-  // State to manage whether the dropdown is open or closed
-  const [isOpen, setIsOpen] = useState(false);
 
-  // Function to toggle the dropdown state
-  const toggleDropdown = () => {
-    setIsOpen(!isOpen);
-  };
 
   return (
-    <div className="dropdown">
-      {/* Button to toggle the dropdown */}
-      <button className="dropdown-toggle" onClick={toggleDropdown}>
-      <a href="#">Kitchen<FaCaretDown /></a>
-      </button>
-      {/* Dropdown menu */}
-      {isOpen && (
-        <div className="dropdown-menu">
-          <ul>
-            <li>Pots & Pans</li>
-            <li>Knives</li>
-            <li>Paper Towels</li>
-          </ul>
-        </div>
-      )}
-    </div>
+    <Dropdown>
+    <Dropdown.Toggle style={{ backgroundColor: 'teal', borderColor: 'Teal', color: 'black' }} id="dropdown-basic">
+      Kitchen
+    </Dropdown.Toggle>
+  
+    <Dropdown.Menu style={{ backgroundColor: 'Teal' }}>
+      <Dropdown.Item style={{ color: 'white' }} href="#/action-1">Pots/Pans</Dropdown.Item>
+      <Dropdown.Item style={{ color: 'white' }} href="#/action-2">Containers</Dropdown.Item>
+      <Dropdown.Item style={{ color: 'white' }} href="#/action-3">Cutlery</Dropdown.Item>
+    </Dropdown.Menu>
+  </Dropdown>
   );
 }
 

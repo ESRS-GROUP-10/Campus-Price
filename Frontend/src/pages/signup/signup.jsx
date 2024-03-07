@@ -1,5 +1,4 @@
 import {useRef, useState, useEffect} from 'react'
-import {faCheck, faTimes, faInfoCircle } from "@fortawesome/free-solid-svg-icons"
 import {Form, Button, Card, Container} from 'react-bootstrap'
 import React from 'react'
 import './signup.css'
@@ -19,7 +18,7 @@ export const Signup = () => {
       <div className="w-100" style={{maxWidth: "400px"}}>
     <Card>
       <Card.Body>
-      <h2 className="text-center mb-4">Campus<span style={{ color: 'red' }}>Price</span></h2>    
+      <a className="logo-link" href='/homepage'><h2 className="text-center mb-4">Campus<span style={{ color: 'red' }}>Price</span></h2></a>
         
         <Form>
           <Form.Group id="email">

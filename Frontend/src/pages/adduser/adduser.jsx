@@ -27,9 +27,6 @@ export const Adduser = () => {
 
       </Card.Body>
       </Card>
-      <div className="w-100 text-center mt-2">
-        Do not have an account? <a href='/'>Sign Up</a>
-      </div>
       </div>
       </Container>
   )
