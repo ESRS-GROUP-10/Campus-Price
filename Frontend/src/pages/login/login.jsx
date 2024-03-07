@@ -72,14 +72,24 @@ export function PostData2(data){
       console.log("bad staut code from server");
       throw new Error('Bad status code from server.');
     }
+    else{
+      //ifresponce.json.contains("OK"){
+        //redirect do whatever.....
+      //}
+      //else{
+        //not logged in error
+      //}
+    }
     return response.json();
   })
   .then(function(responseData) {
-    console.log("respnce data is _____");
-    console.log(responseData.data);
     if (!(responseData.data && responseData.data.success)) {
       console.log("bad responce from server!");
       throw new Error('Bad response from server.');
+    }
+    else {
+      console.log("respnce data is _____");
+      console.log(responseData.data);
     }
   });
 
