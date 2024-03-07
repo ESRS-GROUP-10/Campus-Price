@@ -59,6 +59,33 @@ function callPostData(data){
   
 
 }
+export function PostData2(data){
+  return fetch('/backend/login.php', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(subscription)
+  })
+  .then(function(response) {
+    if (!response.ok) {
+      console.log("bad staut code from server");
+      throw new Error('Bad status code from server.');
+    }
+    return response.json();
+  })
+  .then(function(responseData) {
+    console.log("respnce data is _____");
+    console.log(responseData.data);
+    if (!(responseData.data && responseData.data.success)) {
+      console.log("bad responce from server!");
+      throw new Error('Bad response from server.');
+    }
+  });
+
+
+
+}
 export function PostData(userData) {
   let BaseURL = '../backend/login.php';
   return new Promise((resolve, reject) =>{
